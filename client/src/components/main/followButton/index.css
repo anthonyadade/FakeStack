@@ -1,0 +1,6 @@
+.vote-follow-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Vote buttons on left, follow button on right */
+  margin-bottom: 1rem;
+}

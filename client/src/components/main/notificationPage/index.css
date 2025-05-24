@@ -1,0 +1,35 @@
+.notifications-history-page {
+  padding: 16px;
+}
+
+.notification-history-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.notification-history-header button {
+  height: 100%;
+}
+
+.notifications-history-card {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 12px;
+  margin-bottom: 12px;
+}
+
+.notifications-history-title {
+  font-weight: bold;
+  margin-top: 0px;
+  margin-bottom: 4px;
+}
+
+.notifications-history-summary {
+  margin: 0;
+  color: #666;
+}
+  
+.notifications-history-time {
+  font-size: 0.7rem;
+  color:#666;
+}
