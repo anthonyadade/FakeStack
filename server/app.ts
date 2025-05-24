@@ -23,7 +23,7 @@ import subscriptionController from './controllers/subscription.controller';
 
 dotenv.config();
 
-const MONGO_URL = `${process.env.MONGODB_URI || 'mongodb+srv://adadea:OrpNfxFWScqVtple@db-cs4530-spring25-412.trqem.mongodb.net'}/fake_so`;
+const MONGO_URL = `${process.env.MONGODB_URI || ''}/fake_so`;
 const CLIENT_URL = process.env.CLIENT_URL || 'http://localhost:3000';
 const port = parseInt(process.env.PORT || '8000');
 
