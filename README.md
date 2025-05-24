@@ -1,3 +1,49 @@
+## My Contributions
+
+During this group project, I worked primarily on the notification and messaging systems. Below are the features I contributed to:
+
+### 🔔 Notification System
+
+- **API Design**: Added several backend routes in [`server/controllers/notification.controller.ts`](server/controllers/notification.controller.ts) to support notification functionality:
+  - `POST /addNotification` – create and store a new notification
+  - `GET /getNotification/:notificationId` – fetch a specific notification
+  - `GET /getNotisByUser/:username` – fetch all notifications for a user
+  - `PATCH /markNotiRead/:notificationId` – mark a specific notification as read
+  - `PATCH /markAllNotisRead/:username` – mark all notifications for a user as read
+
+- **Notification Hook**: Created the original custom React hook in [`client/src/hooks/useNotifications.ts`](client/src/hooks/useNotifications.ts) to:
+  - Fetch and display notifications for the current user.
+  - Set up backend fetching and real-time updates using `notificationUpdate` (initially for new notifications only).
+  - Sorting logic and the `handleNotiCreate` handler were added later by teammates (not necessary initially).
+
+### ✅ Read Receipts in Messaging
+
+Implemented read receipt functionality across multiple files:
+
+- **Data Model Changes**:
+  - [`server/utils/database.util.ts`](server/utils/database.util.ts)
+  - [`shared/types/message.d.ts`](shared/types/message.d.ts)
+
+- **Frontend Display**:
+  - [`client/src/components/main/messageCard/index.tsx`](client/src/components/main/messageCard/index.tsx)
+
+- **Socket Logic**:
+  - [`client/src/hooks/useDirectMessage.ts`](client/src/hooks/useDirectMessage.ts)
+  - [`server/controllers/chat.controller.ts`](server/controllers/chat.controller.ts)
+
+- **Message Updates**:
+  - [`server/controllers/message.controller.ts`](server/controllers/message.controller.ts)
+  - [`client/src/services/messageService.ts`](client/src/services/messageService.ts)
+
+Read receipts were implemented so that:
+- Messages are marked as read when a user enters a chat.
+- New messages are marked as read if the viewer is already in the chat.
+- The `readBy` field tracks which users have seen a message.
+
+These changes spanned both frontend and backend code, enhancing the messaging experience with real-time feedback and better user awareness. 😀
+
+ORIGINAL README BELOW!:
+
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/fE-a_qEp)
 The individual and team project for this class are designed to mirror the experiences of a software engineer joining a new development team: you will be “onboarded” to our codebase, make several individual contributions, and then form a team to propose, develop and implement new features. The codebase that we’ll be developing on is a Fake Stack Overflow project (let’s call it HuskyFlow). You will get an opportunity to work with the starter code which provides basic skeleton for the app and then additional features will be proposed and implemented by you! All implementation will take place in the TypeScript programming language, using React for the user interface.
 
